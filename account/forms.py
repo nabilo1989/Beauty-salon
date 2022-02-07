@@ -14,9 +14,9 @@ class UserRegistrationForm(forms.Form):
         label='confrim password')
 
     def clean(self):
-        cd = super().clean()
+        cd = super()
         p1 = cd.get('password1')
-        p2 = cd.get('password2')
+        p2 = get('password2')
 
         if p1 and p2 and p1 != p2:
             raise ValidationError('password is not correct')
